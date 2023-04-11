@@ -17,7 +17,7 @@
 三、启动 3 个 v 节点
 
 ```shell
-./start-thress-validators.sh
+./start-three-validators.sh
 ```
 
 四、kill 所有进程
