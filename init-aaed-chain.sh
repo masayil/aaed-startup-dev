@@ -6,10 +6,14 @@ cp aaed/build/bin/geth validator2
 cp aaed/build/bin/geth validator3
 cp aaed/build/bin/geth bootnode
 
-validator1/geth init --datadir validator1/data  ./genesis.json &> /dev/null
-validator2/geth init --datadir validator2/data  ./genesis.json &> /dev/null
-validator3/geth init --datadir validator3/data  ./genesis.json &> /dev/null
-bootnode/geth init --datadir bootnode/data  ./genesis.json &> /dev/null
+echo "初始化validator1"
+validator1/geth init --datadir validator1/data  ./genesis.json
+echo "初始化validator2"
+validator2/geth init --datadir validator2/data  ./genesis.json
+echo "初始化validator3"
+validator3/geth init --datadir validator3/data  ./genesis.json
+echo "初始化bootnode"
+bootnode/geth init --datadir bootnode/data  ./genesis.json
 
 cp validator_keystore/validator1-keystore validator1/data/keystore
 cp validator_keystore/validator2-keystore validator2/data/keystore
