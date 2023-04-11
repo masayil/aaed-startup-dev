@@ -1,7 +1,7 @@
 #!/bin/env bash
 
 
-bootnode/geth --datadir=bootnode/data --syncmode=full --networkid=11360 --nodekeyhex=c199a45cba57765a132004bf330ad868ef51335b64e0693458d2282c67f2d24b --maxpeers=512 --light.maxpeers=256 --light.serve=50 --miner.gaslimit=30000000 --txpool.accountslots=256 --txpool.globalslots=10000 --txpool.accountqueue=128 --txpool.globalqueue=5000 --port=20000 --log.file=log-bootnode.log --authrpc.port=30000 &
+bootnode/geth --datadir=bootnode/data --syncmode=full --networkid=11360 --nodekeyhex=c199a45cba57765a132004bf330ad868ef51335b64e0693458d2282c67f2d24b --maxpeers=512 --light.maxpeers=256 --light.serve=50 --miner.gaslimit=30000000 --txpool.accountslots=256 --txpool.globalslots=10000 --txpool.accountqueue=128 --txpool.globalqueue=5000 --port=20000 --log.file=log-bootnode.log --authrpc.port=30000 --http --http.port=8545 --http.api="eth,net,web3,txpool,personal"&
 echo "==启动bootnode成功==="
 
 validator1/geth --datadir=validator1/data --syncmode=full --networkid=11360 --mine --allow-insecure-unlock --unlock=9cc2dea8a8353c3108d021e2228b77cb11c05b37 --password=password.txt --config=config.toml --miner.gaslimit=30000000 --txpool.accountslots=256 --txpool.globalslots=10000 --txpool.accountqueue=128 --txpool.globalqueue=5000 --miner.etherbase=9cc2dea8a8353c3108d021e2228b77cb11c05b37  --port=20001 --log.file=log-validator1.log --authrpc.port=30001 &
