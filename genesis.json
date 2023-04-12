@@ -14,8 +14,7 @@
     "londonBlock": 0,
     "clique": {
       "period": 3,
-      "epoch": 200,
-      "sealerbalancethreshold": 1000000000000000000
+      "epoch": 200
     }
   },
   "nonce": "0x0",
